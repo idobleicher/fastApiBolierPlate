@@ -38,6 +38,5 @@ jobs:
           ECR_REPOSITORY: fastapi-check
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          cd $GITHUB_WORKSPACE
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -t $ECR_REGISTRY/$ECR_REPOSITORY:latest
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY --all-tags
